@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Receive</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-spacing: 5px;
+        }
+        th, td{
+            padding: 15px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div id="s">
+    <center><TABLE>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Message</th>
+        </tr>
+        <TR>
+            {% for user in users %}
+            <TD>{{ user.name | escape }}</TD>
+            <TD>{{ user.phone | escape }}</TD>
+            <TD>{{ user.message | escape }}</TD>
+            {% endfor %}
+        </TR>
+        </thead>
+    </TABLE></center>
+<!--    {% for user in users %}-->
+<!--            {{ user.name | default:'NA' }}-->
+<!--            {{ user.phone | default:'NA' }}-->
+<!--            {{ user.message | default:'NA' }}<br>-->
+<!--    {% endfor %}-->
+    <br>
+    </div>
+</body>
+</html>

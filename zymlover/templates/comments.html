@@ -1,0 +1,75 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+<body style="background-color:grey;">
+<div style="width:800px; margin-left:300px;">
+    {% if error %}
+    {{error}}
+    {% endif %}
+<h3>Comments:</h3><br>
+<form method="POST" action="/comments">{% csrf_token %}
+  <div class="form-group">
+      <label for="comment"><h5>Post Comments ({{ stu.count}})</h5> </label><br>
+        <input type="text" class="form-control" placeholder="Enter Comment Here " name="comment">
+  </div>
+    <input type="hidden" name="parentsno" value="{{stu.sno}}">
+    <input type="hidden" name="postsno">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% for c in stu %}
+    <div class="row my-3">
+         <div class="col-md-2">
+                    <img class="rounded mx-auto d-block w-100 p-2" style="border: 2px solid black; border-radius:50px;"
+                         src="{% static 'img/user.png' %}" alt="dhkhd">
+         </div>
+         <div class="col-md-10">
+                    <b>{{ c.user.username | escape }} at <span class="badge badge-secondary">{{ c.timestamp | naturaltime }}</span></b><br>
+                {{ c.comment|safe }}
+            <div class="reply mx-0">
+                    <button class="btn btn-sm btn-primary" type="button" data-toggle="collapse" data-target="#replyBox{{c.sno}}"
+                        aria-expanded="false" aria-controls="replyBox{{c.sno}}">Reply</button>
+                <div class="collapse" id="replyBox{{c.sno}}">
+                    <div class="card card-body my-2">
+                      <form method="POST" action="/comments">{% csrf_token %}
+                        <div class="form-group">
+                            <label for="parentcomment"><h5>Reply</h5> </label><br>
+                            <input type="text" class="form-control" placeholder="Enter Comment Here " name="parentcomment">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Reply</button>
+                      </form>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+     {% endfor %}
+</div>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js /mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

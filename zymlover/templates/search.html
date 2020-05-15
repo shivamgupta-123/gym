@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Activitar Template">
+    <meta name="keywords" content="Activitar, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Content</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Hero Section Begin -->
+    <div id="search" style="margin: 10px 10px 10px 10px;">
+        <h2>Search Results: </h2>
+    {% if s|length < 1 %}
+        <p><b>No Result found</b></p>
+    {% endif %}
+    {% if s|length > 1 %}
+        {{s.name}}
+    {% endif %}
+    </div>
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-logo-item">
+                        <div class="f-logo">
+                            <a href="#"><img src="{% static 'img/logo-1.jpg' %}" alt=""></a>
+                        </div>
+                        <p>Despite growth of the Internet over the past seven years, the use of toll-free phone numbers
+                            in television advertising continues.</p>
+                        <div class="social-links">
+                            <h6>Follow us</h6>
+                            <a href="https://www.facebook.com/rawbattnpang" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/vipulmo70760978" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5>Our Blog</h5>
+                        <div class="footer-blog">
+                            <a href="#" class="fb-item">
+                                <h6>Most people who work</h6>
+                                <span class="blog-time"><i class="fa fa-clock-o"></i> Jan 31, 2020</span>
+                            </a>
+                            <a href="#" class="fb-item">
+                                <h6>Freelance Design Tricks How </h6>
+                                <span class="blog-time"><i class="fa fa-clock-o"></i> Jan 31, 2020</span>
+                            </a>
+                            <a href="#" class="fb-item">
+                                <h6>have a computer at home have had </h6>
+                                <span class="blog-time"><i class="fa fa-clock-o"></i> Jan 31, 2020</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <h5>Program</h5>
+                        <ul class="workout-program">
+                            <li><a href="#">Bodybuilding</a></li>
+                            <li><a href="#">Running</a></li>
+                            <li><a href="#">Streching</a></li>
+                            <li><a href="#">Weight Loss</a></li>
+                            <li><a href="#">Gym Fitness</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h5>Get Info</h5>
+                        <ul class="footer-info">
+                            <li>
+                                <i class="fa fa-name"></i>
+                                <span>Name: </span>
+                                Shivam Gupta
+                            </li>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <span>Phone:</span>
+                                <span>1.</span>  8057527360
+                                <span>2.</span>  7505391540
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope-o"></i>
+                                <span>Email:</span>
+                                sg242958@gmail.com
+                            </li>
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <span>Address</span>
+                                Indira Gandhi University, Meerpur
+                                Rewari (HR) 123401
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="ct-inside"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

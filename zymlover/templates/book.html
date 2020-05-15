@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Now</title>
+    <script>
+    function goBack()
+    {
+        window.history.back()
+    }
+</script>
+</head>
+<body>
+<div style="background-color:brown;">
+    <center><h1 style="bgcolor:brown;">BOOK NOW</h1></center>
+</div>
+<div style="background-color: gray;">
+        <form action="index/book" method="post" style="margin-left:25px;">{% csrf_token %}
+            <br>
+        Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="names" required><br></br>
+        Email Address:&nbsp; <input type="email" name="emails" required></br></br>
+        Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="phones" placeholder="08057527360" required></br></br>
+        Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="addresses" required></br></br>
+        Father's Name: &nbsp;&nbsp;<input type="text" name="fnames" required></br></br>
+        Mother's Name: <input type="text" name="mnames" required></br></br>
+        Category:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="category" value="General" checked>General
+                  <input type="radio" name="category" value="OBC">OBC
+                    <input type="radio" name="category" value="SC/ST">SC/ST
+                    <input type="radio" name="category" value="Other">Other<br><br>
+        Fees:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="fees" value="1800" readonly><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button onclick="goBack()">Back</button></br></br>
+        </form>
+    </center>
+</div>
+</body>
+</html>
